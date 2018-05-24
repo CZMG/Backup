@@ -28,6 +28,7 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -41,6 +42,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already inst    alled a
 " different version somewhere else.
 Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'mattn/emmet-vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
@@ -172,3 +174,28 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+"The NERD Commenter
+let g:vimrc_author='WuYefeng' 
+let g:vimrc_email='1007653544@qq.com' 
+let g:vimrc_homepage='http://www.spyderlf.xyz' 
+
+nmap <F4> :AuthorInfoDetect<cr> 
+"install details
+"Put this file(authorinfo.vim) in the vim plugins directory (~/.vim/plugin/) to load it automatically.
+
+
+"Emmet
+"Enable just for html/css
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+"部分用法：（快捷键为Ctrl+y）
+"1、包围：vim可视模式下，[n]j选取n行内容，按",",这时 Vim 的命令行会提示 Tags:，键入标签名，如：ul>li*
+"2、插入模式下根据光标位置选中整个标签，步骤：
+"	按 i 或 a 进入 Insert 模式；
+"       按 <Ctrl-y>，再按 d 键，选中光标所处的整个标签。
+"3、跳转到下/上一个编辑点：插入模式下调用快捷键，再按n/N键。
+"4、插入图片大小：移动光标到img标签，调用快捷键，再按i键。（仅适用于本地图片）
+"5、合并行：选中n行，调用快捷键，再按m键。
+"6、移除标签对：移动光标到a标签对内，普通模式下调用快捷键并按k键。
+"7、注释：移动光标到块中，插入模式下调用快捷键并按/。（再次操作会取消注释，普通模式操作亦可）
